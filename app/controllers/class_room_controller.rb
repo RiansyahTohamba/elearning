@@ -1,3 +1,4 @@
+require 'cgi'
 class ClassRoomController < ApplicationController
 	def index
 		class_rooms = {
@@ -8,5 +9,9 @@ class ClassRoomController < ApplicationController
 			]
 		}
 		render json: class_rooms		
+	end
+
+	def add_new_class
+		CGI.escape_html("<a href='kemana'> </a>")		
 	end
 end
