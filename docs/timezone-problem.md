@@ -1,13 +1,26 @@
-timezone-problem
+# konfigurasi server
+https://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html
 
-rails timezone 
+pada class Application, server bisa dikonfigurasi agar mengikuti time dimana server disimpan.
+misalkan server disimpan di Jakarta, maka set
+`
+config.time_zone = 'Asia/Jakarta'
+config.active_record.default_timezone = :local
+`
 
-indonesia sendiri punya 3 zona waktu. 
-bagaimana menyimpan timezone yang benar?
-jika server disimpan di Jakarta, maka: 
+# bagaimana jika user/client berada pada zona waktu yang berbeda?
 
-1. Test-case-1 = user berada di kendari
-maka transaction yang dilakukan berada pada jam?
+bagaimana jika user/client berada pada zona waktu yang berbeda dengan server?
+tidak ada masalah, semuanya mengacu pada timezone server.
 
-open quiz_class_spec
+
+https://betterprogramming.pub/time-zones-for-software-developers-7f21d5a407aa
+
+
+common problem involving time-zone
+1. Displaying time in the user’s time zone
+2. Displaying time in another time zone
+3.  Converting time from one time zone to another
+
+
 
